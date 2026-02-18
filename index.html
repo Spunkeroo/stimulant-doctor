@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stimulant Doctor — ADHD Medications, Nootropics & Focus Science</title>
+  <title>Stimulant Doctor — ADHD Medications & Focus Science</title>
   <meta name="description" content="Evidence-based guide to ADHD medications, nootropics, and focus optimization. Compare treatments, find online assessments, and take control of your focus.">
   <meta name="keywords" content="ADHD medication, Adderall, Vyvanse, nootropics, focus, stimulant, ADHD diagnosis online, natural Adderall alternatives, cognitive enhancement">
   <meta property="og:title" content="Stimulant Doctor — Your Focus, Optimized">
@@ -12,6 +12,9 @@
   <meta property="og:url" content="https://stimulant.doctor">
   <meta property="og:image" content="https://stimulant.doctor/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@SpunkArt13">
+  <meta name="twitter:title" content="Stimulant Doctor — ADHD Medications & Focus Science">
+  <meta name="twitter:description" content="Evidence-based guide to ADHD medications, nootropics, and focus optimization.">
   <meta name="twitter:image" content="https://stimulant.doctor/og-image.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
   <link rel="canonical" href="https://stimulant.doctor">
@@ -555,12 +558,12 @@
   <!-- PROMO BANNER -->
   <div class="promo-banner">
     <p style="color:#a855f7;font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;">From the Creator</p>
-    <h3 style="color:#fff;font-size:1.4rem;margin-bottom:0.5rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" style="color:#ff5f1f;">@SpunkArt13</a></h3>
+    <h3 style="color:#fff;font-size:1.4rem;margin-bottom:0.5rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" rel="noopener noreferrer" style="color:#ff5f1f;">@SpunkArt13</a></h3>
     <p style="color:#999;font-size:0.9rem;margin-bottom:0.5rem;max-width:500px;display:inline-block;">Building useful tools on Bitcoin. Free prediction markets + free crypto casino.</p>
     <div class="promo-btns">
-      <a href="https://spunk.bet" target="_blank" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
-      <a href="https://predict.pics" target="_blank" style="background:#a855f7;color:#fff;">Predict Network</a>
-      <a href="https://spunkart.com" target="_blank" style="background:transparent;color:#fff;border:1px solid #555;">SpunkArt.com</a>
+      <a href="https://spunk.bet" target="_blank" rel="noopener noreferrer" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
+      <a href="https://predict.pics" target="_blank" rel="noopener noreferrer" style="background:#a855f7;color:#fff;">Predict Network</a>
+      <a href="https://spunkart.com" target="_blank" rel="noopener noreferrer" style="background:transparent;color:#fff;border:1px solid #555;">SpunkArt.com</a>
     </div>
     <p style="color:#666;font-size:0.7rem;margin-top:1rem;">Free daily SPUNK runes + ordinal prizes on spunk.bet</p>
   </div>
@@ -582,10 +585,10 @@
       </div>
       <div class="footer-section">
         <h4>@SpunkArt13</h4>
-        <a href="https://spunk.bet" target="_blank">Spunk.Bet Casino</a>
-        <a href="https://predict.pics" target="_blank">Predict Network</a>
-        <a href="https://spunkart.com" target="_blank">SpunkArt.com</a>
-        <a href="https://x.com/SpunkArt13" target="_blank">Follow on X</a>
+        <a href="https://spunk.bet" target="_blank" rel="noopener noreferrer">Spunk.Bet Casino</a>
+        <a href="https://predict.pics" target="_blank" rel="noopener noreferrer">Predict Network</a>
+        <a href="https://spunkart.com" target="_blank" rel="noopener noreferrer">SpunkArt.com</a>
+        <a href="https://x.com/SpunkArt13" target="_blank" rel="noopener noreferrer">Follow on X</a>
       </div>
       <div class="footer-section">
         <h4>Legal</h4>
@@ -616,7 +619,7 @@
       // Store locally for now — hook up to email service later
       const emails = JSON.parse(localStorage.getItem('sd_emails') || '[]');
       emails.push({ email, date: new Date().toISOString() });
-      localStorage.setItem('sd_emails', JSON.stringify(emails));
+      localStorage.setItem('sd_emails', JSON.stringify(emails.slice(-500)));
       document.getElementById('email-input').value = '';
       alert('Thanks! Your Focus Toolkit is on its way. Check your inbox.');
     }
