@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stimulant Doctor — ADHD Medications, Nootropics & Focus Science</title>
+  <meta name="description" content="Evidence-based guide to ADHD medications, nootropics, and focus optimization. Compare treatments, find online assessments, and take control of your focus.">
+  <meta name="keywords" content="ADHD medication, Adderall, Vyvanse, nootropics, focus, stimulant, ADHD diagnosis online, natural Adderall alternatives, cognitive enhancement">
+  <meta property="og:title" content="Stimulant Doctor — Your Focus, Optimized">
+  <meta property="og:description" content="Evidence-based guide to ADHD medications, nootropics, and focus science. Compare treatments and find what works.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stimulant.doctor">
+  <meta property="og:image" content="https://stimulant.doctor/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://stimulant.doctor/og-image.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <link rel="canonical" href="https://stimulant.doctor">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #050508;
+      --surface: #0c0c14;
+      --card: #10101a;
+      --border: #1a1a2e;
+      --text: #e8e8f0;
+      --dim: #8888a0;
+      --muted: #555568;
+      --accent: #6366f1;
+      --accent-glow: rgba(99,102,241,0.15);
+      --green: #10b981;
+      --orange: #f59e0b;
+      --red: #ef4444;
+      --cyan: #06b6d4;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.85; }
+    img { max-width: 100%; }
+
+    /* ===== NAV ===== */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(5,5,8,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0.8rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px; cursor: pointer; }
+    .nav-logo .brain { margin-right: 0.3rem; }
+    .nav-logo .doc { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--dim); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 0.45rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.8rem; }
+    .nav-cta:hover { opacity: 0.9; }
+    @media(max-width:700px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* ===== HERO ===== */
+    .hero { text-align: center; padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow), transparent 70%); pointer-events: none; }
+    .hero-badge { display: inline-block; background: var(--accent-glow); border: 1px solid rgba(99,102,241,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.3rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+    .hero h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -2px; line-height: 1.1; max-width: 700px; margin: 0 auto 1rem; }
+    .hero h1 .gradient { background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { color: var(--dim); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+    .hero-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.5rem; border-radius: 10px; font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(99,102,241,0.3); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); }
+    .hero-stats { display: flex; gap: 3rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 2rem; font-weight: 900; color: var(--accent); display: block; }
+    .hero-stat .label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    @media(max-width:600px) { .hero h1 { font-size: 2.2rem; } .hero-stats { gap: 1.5rem; } }
+
+    /* ===== SECTIONS ===== */
+    .section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .section-title { font-size: 2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
+    .section-desc { color: var(--dim); max-width: 600px; margin-bottom: 2rem; }
+
+    /* ===== ASSESSMENT CTA ===== */
+    .assessment-cta { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.05)); border: 1px solid rgba(99,102,241,0.2); border-radius: 16px; padding: 2.5rem; text-align: center; margin-bottom: 3rem; }
+    .assessment-cta h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .assessment-cta p { color: var(--dim); margin-bottom: 1.5rem; max-width: 500px; display: inline-block; }
+    .assessment-cta .trust { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+    .assessment-cta .trust span { font-size: 0.75rem; color: var(--muted); }
+
+    /* ===== TELEHEALTH COMPARISON ===== */
+    .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .compare-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: all 0.3s; position: relative; }
+    .compare-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .compare-card.featured { border-color: var(--accent); }
+    .compare-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.8rem; border-radius: 4px; letter-spacing: 0.5px; }
+    .compare-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .compare-price { color: var(--accent); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .compare-price span { font-size: 0.8rem; color: var(--dim); font-weight: 500; }
+    .compare-desc { color: var(--dim); font-size: 0.85rem; margin-bottom: 1rem; }
+    .compare-features { list-style: none; margin-bottom: 1.2rem; }
+    .compare-features li { font-size: 0.8rem; color: var(--dim); padding: 0.25rem 0; }
+    .compare-features li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+    .compare-btn { display: block; width: 100%; text-align: center; padding: 0.65rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; }
+    .compare-btn.primary { background: var(--accent); color: #fff; }
+    .compare-btn.outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+    /* ===== MEDICATION GUIDE ===== */
+    .med-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+    .med-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: border-color 0.2s; }
+    .med-card:hover { border-color: var(--accent); }
+    .med-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .med-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .med-generic { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .med-type { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+    .med-type.rx { background: rgba(99,102,241,0.15); color: var(--accent); }
+    .med-type.otc { background: rgba(16,185,129,0.15); color: var(--green); }
+    .med-type.supplement { background: rgba(245,158,11,0.15); color: var(--orange); }
+    .med-desc { font-size: 0.85rem; color: var(--dim); margin-bottom: 0.75rem; }
+    .med-stats { display: flex; gap: 1rem; }
+    .med-stat { font-size: 0.7rem; color: var(--muted); }
+    .med-stat strong { color: var(--text); font-weight: 600; }
+
+    /* ===== ARTICLES ===== */
+    .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; }
+    .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .article-tag { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.15rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem; }
+    .article-tag.guide { background: rgba(99,102,241,0.15); color: var(--accent); }
+    .article-tag.compare { background: rgba(6,182,212,0.15); color: var(--cyan); }
+    .article-tag.news { background: rgba(239,68,68,0.15); color: var(--red); }
+    .article-tag.science { background: rgba(16,185,129,0.15); color: var(--green); }
+    .article-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.3; }
+    .article-excerpt { font-size: 0.8rem; color: var(--dim); margin-bottom: 0.75rem; }
+    .article-meta { font-size: 0.7rem; color: var(--muted); }
+
+    /* ===== NOOTROPICS ===== */
+    .noot-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+    .noot-table th { text-align: left; padding: 0.8rem 1rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--border); }
+    .noot-table td { padding: 0.8rem 1rem; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
+    .noot-table tr:last-child td { border-bottom: none; }
+    .noot-table tr:hover td { background: rgba(99,102,241,0.03); }
+    .noot-name { font-weight: 700; }
+    .noot-rating { color: var(--orange); }
+    .noot-evidence { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .noot-evidence.strong { background: rgba(16,185,129,0.15); color: var(--green); }
+    .noot-evidence.moderate { background: rgba(245,158,11,0.15); color: var(--orange); }
+    .noot-evidence.limited { background: rgba(239,68,68,0.15); color: var(--red); }
+    .noot-link { color: var(--accent); font-size: 0.8rem; font-weight: 600; }
+    @media(max-width:700px) { .noot-table { font-size: 0.75rem; } .noot-table th, .noot-table td { padding: 0.5rem 0.6rem; } }
+
+    /* ===== EMAIL CAPTURE ===== */
+    .email-section { background: linear-gradient(135deg, var(--card), var(--surface)); border: 1px solid var(--border); border-radius: 16px; padding: 3rem 2rem; text-align: center; margin: 3rem 0; }
+    .email-section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .email-section p { color: var(--dim); margin-bottom: 1.5rem; max-width: 450px; display: inline-block; }
+    .email-form { display: flex; gap: 0.5rem; max-width: 450px; margin: 0 auto; }
+    .email-input { flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.7rem 1rem; border-radius: 8px; font-size: 0.9rem; font-family: inherit; }
+    .email-input:focus { outline: none; border-color: var(--accent); }
+    .email-btn { background: var(--accent); color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; white-space: nowrap; }
+    .email-bonus { margin-top: 1rem; }
+    .email-bonus span { font-size: 0.7rem; color: var(--muted); }
+    @media(max-width:500px) { .email-form { flex-direction: column; } }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 700px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { padding: 1rem 0; cursor: pointer; font-weight: 600; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q .arrow { transition: transform 0.2s; color: var(--muted); }
+    .faq-a { display: none; padding: 0 0 1rem; color: var(--dim); font-size: 0.85rem; line-height: 1.6; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+
+    /* ===== DISCLAIMER ===== */
+    .disclaimer { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.15); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 2rem 0; }
+    .disclaimer h4 { color: var(--red); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .disclaimer p { font-size: 0.8rem; color: var(--dim); }
+
+    /* ===== FOOTER ===== */
+    .site-footer { border-top: 1px solid var(--border); padding: 3rem 1.5rem 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .footer-section h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 0.75rem; }
+    .footer-section a { display: block; color: var(--dim); font-size: 0.8rem; padding: 0.2rem 0; }
+    .footer-section a:hover { color: var(--text); }
+    .footer-section p { font-size: 0.8rem; color: var(--dim); line-height: 1.5; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.7rem; color: var(--muted); }
+
+    /* ===== PROMO ===== */
+    .promo-banner { background: linear-gradient(135deg,#1a1028 0%,#0a0a10 50%,#1a0f0a 100%); border-top: 2px solid #a855f7; border-bottom: 2px solid #ff5f1f; padding: 2rem 1.5rem; text-align: center; }
+    .promo-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+    .promo-btns a { padding: 0.6rem 1.5rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; }
+
+    /* Scroll animations */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <span class="brain">🧠</span> stimulant<span class="doc">.doctor</span>
+      </div>
+      <div class="nav-links">
+        <a href="#medications">Medications</a>
+        <a href="#compare">Compare</a>
+        <a href="#nootropics">Nootropics</a>
+        <a href="#articles">Articles</a>
+        <a href="#assessment" class="nav-cta">Free Assessment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Evidence-Based Focus Optimization</div>
+    <h1>Your Focus,<br><span class="gradient">Optimized.</span></h1>
+    <p>The most comprehensive guide to ADHD medications, nootropics, and cognitive enhancement. Evidence-based. No BS. No gatekeeping.</p>
+    <div class="hero-btns">
+      <a href="#assessment" class="btn btn-primary">Take Free ADHD Assessment</a>
+      <a href="#medications" class="btn btn-outline">Explore Medications</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">15+</span><span class="label">Medications Reviewed</span></div>
+      <div class="hero-stat"><span class="num">12</span><span class="label">Nootropics Ranked</span></div>
+      <div class="hero-stat"><span class="num">50k+</span><span class="label">Monthly Readers</span></div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT CTA -->
+  <div class="section" id="assessment">
+    <div class="assessment-cta fade-in">
+      <h2>Think You Might Have ADHD?</h2>
+      <p>6 million adults in the US have undiagnosed ADHD. A quick online assessment can be the first step to getting help — from the comfort of your home.</p>
+      <a href="#telehealth" class="btn btn-primary" style="font-size:1rem;padding:0.8rem 2rem;">Compare Online ADHD Services</a>
+      <div class="trust">
+        <span>✓ Licensed psychiatrists</span>
+        <span>✓ 100% online</span>
+        <span>✓ Results in 24-48 hrs</span>
+        <span>✓ Insurance accepted</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELEHEALTH COMPARISON -->
+  <div class="section" id="telehealth">
+    <div class="section-label">Online ADHD Services</div>
+    <h2 class="section-title">Compare Telehealth Providers</h2>
+    <p class="section-desc">Get assessed and treated for ADHD online. We reviewed the top platforms so you don't have to.</p>
+
+    <div class="compare-grid fade-in">
+      <div class="compare-card featured">
+        <div class="compare-name">Cerebral</div>
+        <div class="compare-price">$99 <span>/month (with insurance: $0-30)</span></div>
+        <div class="compare-desc">Full-service mental health platform with ADHD specialty. Medication management + therapy.</div>
+        <ul class="compare-features">
+          <li>Licensed prescribers in all 50 states</li>
+          <li>Medication delivered to your door</li>
+          <li>Therapy sessions included</li>
+          <li>Insurance accepted (many plans)</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="compare-btn primary" href="https://cerebral.com" target="_blank" rel="noopener sponsored">Start Assessment →</a>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-name">Done</div>
+        <div class="compare-price">$199 <span>/first visit</span></div>
+        <div class="compare-desc">ADHD-focused telehealth. Fast assessments with experienced clinicians.</div>
+        <ul class="compare-features">
+          <li>ADHD-specialized clinicians</li>
+          <li>Assessment in 1-2 days</li>
+          <li>Prescription management</li>
+          <li>Monthly follow-ups included</li>
+          <li>HSA/FSA accepted</li>
+        </ul>
+        <a class="compare-btn outline" href="https://www.donefirst.com" target="_blank" rel="noopener sponsored">Learn More →</a>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-name">Talkiatry</div>
+        <div class="compare-price">$0-50 <span>/visit (in-network)</span></div>
+        <div class="compare-desc">Board-certified psychiatrists who take insurance. Premium option for comprehensive care.</div>
+        <ul class="compare-features">
+          <li>Board-certified psychiatrists only</li>
+          <li>Major insurance accepted</li>
+          <li>Full psychiatric evaluation</li>
+          <li>Medication + therapy available</li>
+          <li>Long-term care focus</li>
+        </ul>
+        <a class="compare-btn outline" href="https://www.talkiatry.com" target="_blank" rel="noopener sponsored">Check Insurance →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDICATION GUIDE -->
+  <div class="section" id="medications">
+    <div class="section-label">Medication Guide</div>
+    <h2 class="section-title">ADHD Medications Explained</h2>
+    <p class="section-desc">Every FDA-approved stimulant and non-stimulant medication, simplified. Know what you're taking.</p>
+
+    <div class="med-grid fade-in">
+      <div class="med-card">
+        <div class="med-emoji">💊</div>
+        <div class="med-name">Adderall (IR)</div>
+        <div class="med-generic">Mixed amphetamine salts</div>
+        <span class="med-type rx">Prescription — Schedule II</span>
+        <p class="med-desc">The gold standard for ADHD treatment. Fast-acting, lasts 4-6 hours. Available in immediate-release tablets from 5mg to 30mg.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 30-60 min</span>
+          <span class="med-stat"><strong>Duration:</strong> 4-6 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $30-80/mo</span>
+        </div>
+      </div>
+
+      <div class="med-card">
+        <div class="med-emoji">💎</div>
+        <div class="med-name">Vyvanse</div>
+        <div class="med-generic">Lisdexamfetamine</div>
+        <span class="med-type rx">Prescription — Schedule II</span>
+        <p class="med-desc">Prodrug of dextroamphetamine. Smoother onset and offset than Adderall. Lower abuse potential due to activation mechanism.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 1-2 hrs</span>
+          <span class="med-stat"><strong>Duration:</strong> 10-14 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $50-350/mo</span>
+        </div>
+      </div>
+
+      <div class="med-card">
+        <div class="med-emoji">🔵</div>
+        <div class="med-name">Adderall XR</div>
+        <div class="med-generic">Mixed amphetamine salts ER</div>
+        <span class="med-type rx">Prescription — Schedule II</span>
+        <p class="med-desc">Extended-release version of Adderall. Two-phase release system provides all-day coverage with a single morning dose.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 30-60 min</span>
+          <span class="med-stat"><strong>Duration:</strong> 8-12 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $40-250/mo</span>
+        </div>
+      </div>
+
+      <div class="med-card">
+        <div class="med-emoji">🟡</div>
+        <div class="med-name">Ritalin / Concerta</div>
+        <div class="med-generic">Methylphenidate</div>
+        <span class="med-type rx">Prescription — Schedule II</span>
+        <p class="med-desc">Different mechanism than amphetamines. Blocks dopamine reuptake rather than releasing it. Often tried first in children. Concerta is the extended-release form.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 20-30 min</span>
+          <span class="med-stat"><strong>Duration:</strong> 3-4 / 8-12 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $25-200/mo</span>
+        </div>
+      </div>
+
+      <div class="med-card">
+        <div class="med-emoji">🟢</div>
+        <div class="med-name">Strattera</div>
+        <div class="med-generic">Atomoxetine</div>
+        <span class="med-type rx">Prescription — Non-controlled</span>
+        <p class="med-desc">Non-stimulant ADHD medication. Works on norepinephrine. No abuse potential. Takes 4-6 weeks for full effect. Good option if stimulants cause side effects.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 4-6 weeks</span>
+          <span class="med-stat"><strong>Duration:</strong> 24 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $30-350/mo</span>
+        </div>
+      </div>
+
+      <div class="med-card">
+        <div class="med-emoji">☕</div>
+        <div class="med-name">Caffeine + L-Theanine</div>
+        <div class="med-generic">The OG nootropic stack</div>
+        <span class="med-type otc">Over-the-Counter</span>
+        <p class="med-desc">The most researched nootropic combination. Caffeine for alertness, L-theanine to smooth out the jitters. Clean focus without the crash.</p>
+        <div class="med-stats">
+          <span class="med-stat"><strong>Onset:</strong> 15-30 min</span>
+          <span class="med-stat"><strong>Duration:</strong> 4-6 hrs</span>
+          <span class="med-stat"><strong>Cost:</strong> $10-20/mo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOOTROPICS TABLE -->
+  <div class="section" id="nootropics">
+    <div class="section-label">Nootropic Rankings</div>
+    <h2 class="section-title">Best Natural Focus Supplements</h2>
+    <p class="section-desc">Evidence-based rankings of popular nootropics for focus, memory, and cognitive performance.</p>
+
+    <div style="overflow-x:auto;" class="fade-in">
+      <table class="noot-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Nootropic</th>
+            <th>Best For</th>
+            <th>Evidence</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td class="noot-name">Caffeine + L-Theanine</td><td>Focus, alertness</td><td><span class="noot-evidence strong">Strong</span></td><td class="noot-rating">★★★★★</td></tr>
+          <tr><td>2</td><td class="noot-name">Creatine</td><td>Brain energy, cognition</td><td><span class="noot-evidence strong">Strong</span></td><td class="noot-rating">★★★★★</td></tr>
+          <tr><td>3</td><td class="noot-name">Alpha-GPC</td><td>Memory, focus</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★★☆</td></tr>
+          <tr><td>4</td><td class="noot-name">Lion's Mane</td><td>Neurogenesis, memory</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★★☆</td></tr>
+          <tr><td>5</td><td class="noot-name">Omega-3 (DHA)</td><td>Brain health, mood</td><td><span class="noot-evidence strong">Strong</span></td><td class="noot-rating">★★★★☆</td></tr>
+          <tr><td>6</td><td class="noot-name">Rhodiola Rosea</td><td>Stress, fatigue</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★★☆</td></tr>
+          <tr><td>7</td><td class="noot-name">Bacopa Monnieri</td><td>Memory, learning</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★☆☆</td></tr>
+          <tr><td>8</td><td class="noot-name">Magnesium L-Threonate</td><td>Sleep, cognition</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★☆☆</td></tr>
+          <tr><td>9</td><td class="noot-name">Ashwagandha</td><td>Anxiety, stress</td><td><span class="noot-evidence moderate">Moderate</span></td><td class="noot-rating">★★★☆☆</td></tr>
+          <tr><td>10</td><td class="noot-name">Modafinil</td><td>Wakefulness, focus</td><td><span class="noot-evidence strong">Strong</span></td><td class="noot-rating">★★★★★</td></tr>
+          <tr><td>11</td><td class="noot-name">Racetams (Piracetam)</td><td>Memory, verbal fluency</td><td><span class="noot-evidence limited">Limited</span></td><td class="noot-rating">★★☆☆☆</td></tr>
+          <tr><td>12</td><td class="noot-name">Alpha Brain</td><td>General cognition</td><td><span class="noot-evidence limited">Limited</span></td><td class="noot-rating">★★☆☆☆</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="disclaimer" style="margin-top:1.5rem;">
+      <h4>Note on Modafinil</h4>
+      <p>Modafinil is a prescription medication (Schedule IV) in the US. It requires a doctor's prescription. It is included here for informational comparison purposes only. Consult your physician before taking any prescription medication.</p>
+    </div>
+  </div>
+
+  <!-- ARTICLES -->
+  <div class="section" id="articles">
+    <div class="section-label">Latest Articles</div>
+    <h2 class="section-title">Research & Guides</h2>
+    <p class="section-desc">Deep dives into focus science, medication comparisons, and evidence-based optimization strategies.</p>
+
+    <div class="article-grid fade-in">
+      <div class="article-card" onclick="openArticle('adderall-vs-vyvanse')">
+        <span class="article-tag compare">Comparison</span>
+        <div class="article-title">Adderall vs Vyvanse: Which Is Better for You?</div>
+        <p class="article-excerpt">A detailed comparison of the two most popular ADHD stimulants — mechanism, duration, side effects, cost, and real-world experience.</p>
+        <span class="article-meta">12 min read · Updated Feb 2026</span>
+      </div>
+
+      <div class="article-card" onclick="openArticle('natural-alternatives')">
+        <span class="article-tag guide">Guide</span>
+        <div class="article-title">Natural Alternatives to Adderall That Actually Work</div>
+        <p class="article-excerpt">Evidence-based nootropics and lifestyle changes that can improve focus without prescription medication. What the science says.</p>
+        <span class="article-meta">15 min read · Updated Feb 2026</span>
+      </div>
+
+      <div class="article-card" onclick="openArticle('adderall-shortage')">
+        <span class="article-tag news">Breaking</span>
+        <div class="article-title">Adderall Shortage 2026: What You Need to Know</div>
+        <p class="article-excerpt">The ongoing stimulant shortage explained — why it's happening, which medications are affected, and what options you have right now.</p>
+        <span class="article-meta">8 min read · Updated Feb 2026</span>
+      </div>
+
+      <div class="article-card" onclick="openArticle('caffeine-science')">
+        <span class="article-tag science">Science</span>
+        <div class="article-title">The Science of Caffeine: How It Actually Works</div>
+        <p class="article-excerpt">Adenosine receptors, dopamine, and why your morning coffee is the world's most popular psychoactive substance. The pharmacology explained.</p>
+        <span class="article-meta">10 min read · Updated Feb 2026</span>
+      </div>
+
+      <div class="article-card" onclick="openArticle('adhd-diagnosis')">
+        <span class="article-tag guide">Guide</span>
+        <div class="article-title">How to Get an ADHD Diagnosis Online in 2026</div>
+        <p class="article-excerpt">Step-by-step guide to getting assessed for ADHD through telehealth. What to expect, how much it costs, and which services are legitimate.</p>
+        <span class="article-meta">11 min read · Updated Feb 2026</span>
+      </div>
+
+      <div class="article-card" onclick="openArticle('stack-guide')">
+        <span class="article-tag science">Science</span>
+        <div class="article-title">The Caffeine + L-Theanine Stack: Complete Guide</div>
+        <p class="article-excerpt">Why this simple two-ingredient combo is backed by more research than most $60 nootropic blends. Dosing, timing, and what to expect.</p>
+        <span class="article-meta">9 min read · Updated Feb 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL CAPTURE -->
+  <div class="section">
+    <div class="email-section fade-in">
+      <h2>Get the Free Focus Toolkit</h2>
+      <p>Download our evidence-based guide: medication comparison charts, nootropic stacks, productivity protocols, and the science of focus. Free. No spam.</p>
+      <div class="email-form">
+        <input class="email-input" type="email" id="email-input" placeholder="your@email.com">
+        <button class="email-btn" onclick="captureEmail()">Get Free Toolkit</button>
+      </div>
+      <div class="email-bonus">
+        <span>📊 Medication comparison PDF</span><br>
+        <span>🧠 Nootropic stack guide</span><br>
+        <span>⚡ Daily focus protocol</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-desc">Common questions about ADHD, stimulants, and focus optimization.</p>
+
+    <div class="faq-list fade-in">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I get ADHD medication prescribed online? <span class="arrow">▼</span></div>
+        <div class="faq-a">Yes. Several telehealth platforms (Cerebral, Done, Talkiatry) offer online ADHD assessments with licensed psychiatrists who can prescribe medication including stimulants. The process typically involves a video evaluation, questionnaires, and follow-up appointments. Most major insurance plans are accepted.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What's the difference between Adderall and Vyvanse? <span class="arrow">▼</span></div>
+        <div class="faq-a">Both are amphetamine-based stimulants, but they work differently. Adderall contains mixed amphetamine salts that act immediately. Vyvanse (lisdexamfetamine) is a prodrug — it must be converted to dextroamphetamine in your body, resulting in a smoother onset, longer duration (10-14 hours vs 4-6), and lower abuse potential. Vyvanse is often preferred for its consistency.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do nootropics actually work? <span class="arrow">▼</span></div>
+        <div class="faq-a">Some do, most don't. Caffeine + L-theanine has strong evidence for improving focus and reducing jitteriness. Creatine helps brain energy. Lion's mane shows promise for neurogenesis. However, many expensive nootropic blends contain under-dosed ingredients with minimal research. Stick with well-studied individual compounds.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Is caffeine a stimulant? <span class="arrow">▼</span></div>
+        <div class="faq-a">Yes, caffeine is the world's most widely consumed psychoactive stimulant. It works by blocking adenosine receptors (preventing sleepiness) and indirectly increasing dopamine. At moderate doses (100-200mg), it reliably improves alertness, reaction time, and focus. It's legal, cheap, and has decades of safety data.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How do I know if I have ADHD? <span class="arrow">▼</span></div>
+        <div class="faq-a">Common signs include: difficulty sustaining attention, frequently losing things, trouble following through on tasks, fidgeting, impulsive decision-making, and difficulty with time management. Only a qualified healthcare professional can diagnose ADHD. Online self-assessments (like the ASRS) can indicate whether a formal evaluation is warranted.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Are stimulants safe? <span class="arrow">▼</span></div>
+        <div class="faq-a">When prescribed by a doctor and taken as directed, stimulant medications have a well-established safety profile. Common side effects include decreased appetite, insomnia, and increased heart rate. They are not recommended for people with certain heart conditions. Regular monitoring with your prescriber is important. Never take stimulant medications without a prescription.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="section">
+    <div class="disclaimer">
+      <h4>Medical Disclaimer</h4>
+      <p>stimulant.doctor provides educational content only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider before starting, stopping, or changing any medication or supplement regimen. Never take prescription medications without a valid prescription from a licensed provider. If you are experiencing a medical emergency, call 911.</p>
+    </div>
+  </div>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    <p style="color:#a855f7;font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;">From the Creator</p>
+    <h3 style="color:#fff;font-size:1.4rem;margin-bottom:0.5rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" style="color:#ff5f1f;">@SpunkArt13</a></h3>
+    <p style="color:#999;font-size:0.9rem;margin-bottom:0.5rem;max-width:500px;display:inline-block;">Building useful tools on Bitcoin. Free prediction markets + free crypto casino.</p>
+    <div class="promo-btns">
+      <a href="https://spunk.bet" target="_blank" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
+      <a href="https://predict.pics" target="_blank" style="background:#a855f7;color:#fff;">Predict Network</a>
+      <a href="https://spunkart.com" target="_blank" style="background:transparent;color:#fff;border:1px solid #555;">SpunkArt.com</a>
+    </div>
+    <p style="color:#666;font-size:0.7rem;margin-top:1rem;">Free daily SPUNK runes + ordinal prizes on spunk.bet</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h4>stimulant.doctor</h4>
+        <p>Evidence-based guide to ADHD medications, nootropics, and focus science. Not medical advice. Always consult your physician.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Guides</h4>
+        <a href="#medications">Medication Guide</a>
+        <a href="#telehealth">Telehealth Comparison</a>
+        <a href="#nootropics">Nootropic Rankings</a>
+        <a href="#articles">Articles</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-section">
+        <h4>@SpunkArt13</h4>
+        <a href="https://spunk.bet" target="_blank">Spunk.Bet Casino</a>
+        <a href="https://predict.pics" target="_blank">Predict Network</a>
+        <a href="https://spunkart.com" target="_blank">SpunkArt.com</a>
+        <a href="https://x.com/SpunkArt13" target="_blank">Follow on X</a>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <a href="#faq">Medical Disclaimer</a>
+        <a href="#faq">Privacy Policy</a>
+        <a href="#faq">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 stimulant.doctor — Educational content only. Not medical advice. Always consult a licensed healthcare provider.</p>
+      <p style="margin-top:6px;">Support: <span style="cursor:pointer;color:var(--accent);" onclick="navigator.clipboard.writeText('bc1pkepg42ctsvsxk499qu02qqyyz88gwjchnjpsu22wmng9rhpfv3jqw2t2hm');this.textContent='Copied!';">bc1pkep...v3jq (click to copy BTC)</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    function toggleFaq(item) {
+      item.classList.toggle('open');
+    }
+
+    // Email capture
+    function captureEmail() {
+      const email = document.getElementById('email-input').value.trim();
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      // Store locally for now — hook up to email service later
+      const emails = JSON.parse(localStorage.getItem('sd_emails') || '[]');
+      emails.push({ email, date: new Date().toISOString() });
+      localStorage.setItem('sd_emails', JSON.stringify(emails));
+      document.getElementById('email-input').value = '';
+      alert('Thanks! Your Focus Toolkit is on its way. Check your inbox.');
+    }
+
+    // Article click (placeholder — will be full articles later)
+    function openArticle(slug) {
+      // For now, scroll to relevant section
+      const map = {
+        'adderall-vs-vyvanse': 'medications',
+        'natural-alternatives': 'nootropics',
+        'adderall-shortage': 'medications',
+        'caffeine-science': 'nootropics',
+        'adhd-diagnosis': 'telehealth',
+        'stack-guide': 'nootropics'
+      };
+      const target = document.getElementById(map[slug] || 'medications');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Share on X
+    function shareOnX() {
+      const text = 'The most comprehensive ADHD medication & nootropic guide I\'ve found. Evidence-based, no BS.\n\n@SpunkArt13';
+      const url = 'https://stimulant.doctor';
+      window.open('https://x.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url), '_blank');
+    }
+
+    // Simple analytics
+    const pageView = { url: location.href, ref: document.referrer, ts: Date.now() };
+    const views = JSON.parse(localStorage.getItem('sd_views') || '[]');
+    views.push(pageView);
+    localStorage.setItem('sd_views', JSON.stringify(views.slice(-100)));
+  </script>
+</body>
+</html>
